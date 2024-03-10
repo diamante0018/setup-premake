@@ -1,0 +1,16 @@
+name: 'Setup Premake'
+description: 'GitHub action to setup premake on Linux, Windows and macOS.'
+inputs:
+  version:
+    description: 'Premake version'
+    required: true
+  path:
+    description: 'Premake path'
+    required: false
+    default: '.premake'
+branding:
+  icon: 'box'
+  color: 'red'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

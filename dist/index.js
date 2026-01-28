@@ -30119,6 +30119,9 @@ async function main() {
     else if (process.platform == "darwin") {
         const premake = await tc.downloadTool(path_prefix + "-macosx.tar.gz")
         await tc.extractTar(premake, premake_path)
+
+        const premake_exec_path = path.join(premake_path, "premake5");
+        fs.chmodSync(premake_exec_path, "755");
     }
     else {
         const premake = await tc.downloadTool(path_prefix + "-linux.tar.gz")
